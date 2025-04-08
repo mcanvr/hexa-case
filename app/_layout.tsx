@@ -1,4 +1,13 @@
-import { useFonts } from 'expo-font';
+import {
+  Manrope_200ExtraLight,
+  Manrope_300Light,
+  Manrope_400Regular,
+  Manrope_500Medium,
+  Manrope_600SemiBold,
+  Manrope_700Bold,
+  Manrope_800ExtraBold,
+  useFonts,
+} from '@expo-google-fonts/manrope';
 import { Slot, SplashScreen } from 'expo-router';
 import { useEffect } from 'react';
 import { I18nextProvider } from 'react-i18next';
@@ -17,16 +26,14 @@ SplashScreen.preventAutoHideAsync();
 
 export default function Layout() {
   const [loaded, error] = useFonts({
-    'GeistMono-Black': require('~/assets/fonts/GeistMono/GeistMono-Black.ttf'),
-    'GeistMono-Bold': require('~/assets/fonts/GeistMono/GeistMono-Bold.ttf'),
-    'GeistMono-Light': require('~/assets/fonts/GeistMono/GeistMono-Light.ttf'),
-    'GeistMono-Regular': require('~/assets/fonts/GeistMono/GeistMono-Regular.ttf'),
-    'GeistMono-SemiBold': require('~/assets/fonts/GeistMono/GeistMono-SemiBold.ttf'),
-    'GeistMono-Thin': require('~/assets/fonts/GeistMono/GeistMono-Thin.ttf'),
-    'GeistMono-UltraBlack': require('~/assets/fonts/GeistMono/GeistMono-UltraBlack.ttf'),
-    'GeistMono-UltraLight': require('~/assets/fonts/GeistMono/GeistMono-UltraLight.ttf'),
+    Manrope_200ExtraLight,
+    Manrope_300Light,
+    Manrope_400Regular,
+    Manrope_500Medium,
+    Manrope_600SemiBold,
+    Manrope_700Bold,
+    Manrope_800ExtraBold,
   });
-
   useEffect(() => {
     if (loaded || error) {
       SplashScreen.hideAsync();

@@ -862,6 +862,11 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.1.tgz#de633db3ec2ef6a3c89e2f19038063e8a122e2c2"
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
+"@expo-google-fonts/manrope@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/manrope/-/manrope-0.3.0.tgz#44f9fbb96eee005cfb43cb3756c9ea0ab7361788"
+  integrity sha512-OKBZBYrM/MOQyMzn3u3MsU9CTH80NQ/R3CxkZgd+oYVgcA3ag6P1snMmi9Xsw+5yMWPO7Gz5sWfMIhds3MVDsg==
+
 "@expo/bunyan@^4.0.0":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@expo/bunyan/-/bunyan-4.0.1.tgz#ab9e17e36c71c704a0ce72168378a487368da736"

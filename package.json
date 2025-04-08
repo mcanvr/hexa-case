@@ -1,6 +1,10 @@
 {
-  "name": "expo-boilerplate",
+  "name": "hexa-case",
   "version": "1.0.0",
+  "author": {
+    "name": "Mehmet Can Vardar",
+    "email": "mcanvr@icloud.com"
+  },
   "main": "expo-router/entry",
   "scripts": {
     "android": "expo start --android",
@@ -12,6 +16,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo-google-fonts/manrope": "^0.3.0",
     "@expo/vector-icons": "^14.0.0",
     "@react-navigation/native": "^7.0.0",
     "@reduxjs/toolkit": "^2.4.0",
