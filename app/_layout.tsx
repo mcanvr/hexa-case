@@ -11,8 +11,10 @@ import {
 import { Slot, SplashScreen } from 'expo-router';
 import { useEffect } from 'react';
 import { I18nextProvider } from 'react-i18next';
+import { Dimensions, Image, StatusBar, View } from 'react-native';
 import { configureReanimatedLogger, ReanimatedLogLevel } from 'react-native-reanimated';
 import { Provider } from 'react-redux';
+import Topbar from '~/components/Topbar/Topbar';
 import i18n from '~/locales/i18n';
 import { store } from '~/store';
 import '../global.css';
@@ -47,7 +49,19 @@ export default function Layout() {
   return (
     <I18nextProvider i18n={i18n}>
       <Provider store={store}>
-        <Slot />
+        <View className="bg-dark-1000 pt-safe flex-1">
+          <Image
+            style={{
+              height: Dimensions.get('window').height,
+              width: Dimensions.get('window').width,
+            }}
+            source={require('~/assets/bg-vector.png')}
+            className="absolute"
+          />
+          <StatusBar barStyle="light-content" />
+          <Topbar title="AI Logo" />
+          <Slot />
+        </View>
       </Provider>
     </I18nextProvider>
   );

@@ -11,6 +11,18 @@ module.exports = {
           1000: '#09090B',
         },
       },
+      height: {
+        topbar: '3.75rem',
+      },
+      fontSize: {
+        'topbar-logo': '1.063rem',
+      },
+      lineHeight: {
+        'topbar-logo': '1.375rem',
+      },
+      letterSpacing: {
+        'topbar-logo': '-1%',
+      },
       fontFamily: {
         extralight: ['Manrope_200ExtraLight'],
         light: ['Manrope_300Light'],
