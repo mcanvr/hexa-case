@@ -8,7 +8,7 @@ import {
   Manrope_800ExtraBold,
   useFonts,
 } from '@expo-google-fonts/manrope';
-import { Slot, SplashScreen } from 'expo-router';
+import { Slot, SplashScreen, usePathname } from 'expo-router';
 import { useEffect } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import {
@@ -27,6 +27,7 @@ import { Provider } from 'react-redux';
 import { Topbar } from '~/components';
 import i18n from '~/locales/i18n';
 import { store } from '~/store';
+import { Case, Switch } from '~/utils/switch-case';
 import '../global.css';
 
 configureReanimatedLogger({
@@ -37,6 +38,7 @@ configureReanimatedLogger({
 SplashScreen.preventAutoHideAsync();
 
 export default function Layout() {
+  const pathName = usePathname();
   const [loaded, error] = useFonts({
     Manrope_200ExtraLight,
     Manrope_300Light,
@@ -73,7 +75,11 @@ export default function Layout() {
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View className="pt-safe pb-safe-offset-3 flex-1 ">
               <StatusBar barStyle="light-content" />
-              <Topbar title="AI Logo" />
+              <Switch>
+                <Case condition={pathName === '/'}>
+                  <Topbar title="AI Logo" />
+                </Case>
+              </Switch>
               <Slot />
             </View>
           </TouchableWithoutFeedback>
