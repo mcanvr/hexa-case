@@ -14,10 +14,11 @@ import { I18nextProvider } from 'react-i18next';
 import {
   Dimensions,
   Image,
+  Keyboard,
   KeyboardAvoidingView,
   Platform,
-  ScrollView,
   StatusBar,
+  TouchableWithoutFeedback,
   View,
 } from 'react-native';
 import { configureReanimatedLogger, ReanimatedLogLevel } from 'react-native-reanimated';
@@ -68,15 +69,13 @@ export default function Layout() {
             source={require('~/assets/bg-vector.png')}
             className="absolute"
           />
-          <View className="flex-1">
-            <ScrollView
-              contentContainerClassName="flex-grow-1 pt-safe"
-              showsVerticalScrollIndicator={false}>
+          <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <View className="pt-safe pb-safe-offset-3 flex-1 ">
               <StatusBar barStyle="light-content" />
               <Topbar title="AI Logo" />
               <Slot />
-            </ScrollView>
-          </View>
+            </View>
+          </TouchableWithoutFeedback>
         </KeyboardAvoidingView>
       </Provider>
     </I18nextProvider>
