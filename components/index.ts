@@ -1,3 +1,5 @@
+export { default as CreateButton } from './CreateButton';
+export type { CreateButtonProps } from './CreateButton';
 export { default as LogoStyleItem } from './LogoStyleItem';
 export type { LogoStyleItemProps } from './LogoStyleItem';
 export { default as LogoStyles } from './LogoStyles';
