@@ -1,23 +1,23 @@
 # hexa-case
 
-This is a React Native application built with Expo, designed for generating logos based on user prompts and style preferences.
+This is a React Native application built with Expo that leverages **Artificial Intelligence** to generate unique logos based on user-provided text prompts and selected style preferences.
 
 ## ✨ Features
 
-- **Logo Generation:** Create logos based on text prompts.
-- **Style Selection:** Choose from various logo styles.
-- **Responsive Design:** Adapts to different screen sizes using NativeWind.
-- **State Management:** Utilizes Redux Toolkit for predictable state management, with persistence using `redux-persist`.
-- **Navigation:** Handled by Expo Router for seamless screen transitions.
+- **AI-Powered Logo Generation:** Create logos tailored to your needs using AI, driven by your text descriptions.
+- **Style Selection:** Choose from a diverse range of logo styles to match your brand identity.
+- **Responsive Design:** Adapts seamlessly to different screen sizes thanks to NativeWind.
+- **State Management:** Utilizes Redux Toolkit for efficient and predictable state management.
+- **Navigation:** Handled by Expo Router for smooth screen transitions.
 
 ## 🚀 Tech Stack
 
 - **Framework:** React Native (Expo)
 - **Language:** TypeScript
 - **Styling:** NativeWind (Tailwind CSS for React Native), `tailwind-merge`, `clsx`
-- **State Management:** Redux Toolkit, React Redux, Redux Persist
+- **State Management:** Redux Toolkit, React Redux
 - **Routing:** Expo Router
-- **API Client:** Axios
+- **API Client:** Axios (Likely used for AI model communication)
 - **UI Components:** Expo Vector Icons, React Native SVG, Lottie React Native
 - **Fonts:** Expo Google Fonts (Manrope)
 - **Utilities:** Expo Secure Store
@@ -65,11 +65,11 @@ This is a React Native application built with Expo, designed for generating logo
 ```
 hexa-case/
 ├── .expo/            # Expo configuration and cache
-├── api/              # API service definitions (e.g., api.ts using Axios)
+├── api/              # API service definitions (e.g., communication with AI backend)
 ├── app/              # Expo Router screens and layout configuration
 ├── assets/           # Static assets like images and fonts
-├── components/       # Reusable UI components
-├── hooks/            # Custom React hooks (e.g., useStyledComponent.tsx)
+├── components/       # Reusable UI components (e.g., Prompt input, Style selection)
+├── hooks/            # Custom React hooks
 ├── locales/          # Internationalization files
 ├── node_modules/     # Project dependencies
 ├── store/            # Redux Toolkit store, slices, and configuration
@@ -96,7 +96,7 @@ In the project directory, you can run:
 - `yarn web` or `npm run web`: Starts the app in a web browser.
 - `yarn lint`: Lints the code using ESLint and checks formatting with Prettier.
 - `yarn format`: Lints the code with ESLint and formats it using Prettier.
-- `yarn prebuild`: Creates the native `android` and `ios` directories (useful for custom native code or specific builds).
+- `yarn prebuild`: Creates the native `android` and `ios` directories.
 
 ## ✍️ Author
 
