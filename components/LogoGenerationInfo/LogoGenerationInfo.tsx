@@ -107,7 +107,7 @@ export default function LogoGenerationInfo({
                 'text-dark-300': state === 'READY' || state === 'ERROR',
               })}>
               {state === 'PROCESSING'
-                ? 'Ready in 30 seconds'
+                ? `Ready in ${estimatedTime} seconds`
                 : state === 'READY'
                   ? 'Tap to see it.'
                   : 'Click to try again.'}
