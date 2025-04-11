@@ -21,6 +21,7 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
+import FlashMessage from 'react-native-flash-message';
 import { configureReanimatedLogger, ReanimatedLogLevel } from 'react-native-reanimated';
 import { Provider } from 'react-redux';
 import { Topbar } from '~/components';
@@ -78,6 +79,7 @@ export default function Layout() {
           </TouchableWithoutFeedback>
         </KeyboardAvoidingView>
       </Provider>
+      <FlashMessage position="top" />
     </I18nextProvider>
   );
 }

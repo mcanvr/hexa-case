@@ -1,17 +1,31 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { Pressable, StyleSheet, Text } from 'react-native';
 import { StyledComponent } from '~/hooks/useStyledComponent';
+import { cn } from '~/utils/classnames';
 import { Stars } from '../Icons';
 
 export interface CreateButtonProps {
+  disabled?: boolean;
   onPress?: () => void;
+  onLongPress?: () => void;
 }
 
-export default function CreateButton({ onPress }: CreateButtonProps): React.ReactElement {
+export default function CreateButton({
+  onPress,
+  onLongPress,
+  disabled,
+}: CreateButtonProps): React.ReactElement {
   return (
     <Pressable
       onPress={onPress}
-      className="h-14 w-full flex-row items-center justify-center gap-2 overflow-hidden rounded-full transition-opacity active:opacity-50">
+      onLongPress={onLongPress}
+      disabled={disabled}
+      className={cn(
+        'h-14 w-full flex-row items-center justify-center gap-2 overflow-hidden rounded-full transition-opacity active:opacity-50',
+        {
+          'opacity-50': disabled,
+        }
+      )}>
       <LinearGradient
         colors={['#943DFF', '#2938DC']}
         start={{ x: 1, y: 0.5 }}
