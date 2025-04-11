@@ -69,8 +69,7 @@ export default function Home(): React.ReactElement {
       <LogoGenerationInfo
         onPress={async () => {
           if (state === 'ERROR') {
-            dispatch(setState('PROCESSING'));
-            dispatch(setShowInfo(true));
+            handleCreate();
           }
           if (state === 'READY') {
             dispatch(setShowInfo(false));
