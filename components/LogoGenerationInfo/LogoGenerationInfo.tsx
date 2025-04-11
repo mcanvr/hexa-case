@@ -20,6 +20,7 @@ export default function LogoGenerationInfo({
   const { state, showInfo, estimatedTime } = useSelector(
     (state: RootState) => state.logoGeneration
   );
+  const { logo } = useSelector((state: RootState) => state.generatedLogo);
 
   useEffect(() => {
     if (state === 'PROCESSING') {
@@ -55,7 +56,7 @@ export default function LogoGenerationInfo({
             </Case>
             <Case condition={state === 'READY'}>
               <Image
-                source={require('~/assets/logo.jpg')}
+                source={logo ? { uri: logo } : require('~/assets/logo.jpg')}
                 className="absolute h-full w-full"
                 resizeMode="cover"
               />

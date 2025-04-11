@@ -11,9 +11,8 @@ import { setPrompt } from '~/store/slices/promptSlice';
 
 export default function DesignDetail(): React.ReactElement {
   const router = useRouter();
-  const { logo, prompt, style } = useSelector((state: RootState) => state.generatedLogo);
+  const { logo } = useSelector((state: RootState) => state.generatedLogo);
   const logoSource = logo ? { uri: logo } : require('~/assets/logo.jpg');
-  const { logoStyles } = useSelector((state: RootState) => state.logoStyles);
   const dispatch = useDispatch();
 
   return (
