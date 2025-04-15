@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react';
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '~/store';
-import { setMaxLength, setPrompt, supriseMe } from '~/store/slices/promptSlice';
+import { setSelectedLogoStyle } from '~/store/slices/logoStylesSlice';
+import { setMaxLength, setPrompt } from '~/store/slices/promptSlice';
 import { cn } from '~/utils/classnames';
 
 export interface PromptSectionProps {
@@ -14,9 +15,11 @@ export interface PromptSectionProps {
 export default function PromptSection({ maxLength }: PromptSectionProps): React.ReactElement {
   const [isFocused, setIsFocused] = useState(false);
   const dispatch = useDispatch();
-  const { value: prompt, maxLength: maxLengthValue } = useSelector(
-    (state: RootState) => state.prompt
-  );
+  const {
+    value: prompt,
+    maxLength: maxLengthValue,
+    supriseMePrompts,
+  } = useSelector((state: RootState) => state.prompt);
 
   useEffect(() => {
     if (maxLength) {
@@ -29,7 +32,11 @@ export default function PromptSection({ maxLength }: PromptSectionProps): React.
   };
 
   const handleSurpriseMe = () => {
-    dispatch(supriseMe('A blue lion logo reading "HEXA" in bold letters'));
+    const randomIndex = Math.floor(Math.random() * supriseMePrompts.length);
+    const randomPrompt = supriseMePrompts[randomIndex];
+
+    dispatch(setPrompt(randomPrompt.prompt));
+    dispatch(setSelectedLogoStyle(randomPrompt.style));
   };
 
   return (
